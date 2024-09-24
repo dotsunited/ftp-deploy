@@ -13,7 +13,14 @@ deploy:
   environment:
     name: production
   script:
-    - ftp-deploy --server-dir $SERVER_DIR --local-dir $LOCAL_DIR --server $FTP_SERVER --username $FTP_USERNAME --password $FTP_PASSWORD
+    - |
+      ftp-deploy \
+        --server-dir $SERVER_DIR \
+        --local-dir $LOCAL_DIR \
+        --server $FTP_SERVER \
+        --protocol $FTP_PROTOCOL \
+        --username $FTP_USERNAME \
+        --password $FTP_PASSWORD \
 ```
 
 Make sure, you configure the environment variables in the CI/CD settings of your GitLab project.
